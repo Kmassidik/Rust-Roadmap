@@ -1,13 +1,29 @@
 # Rust build output
 **/target/
 
+# Cargo lock (kept for binary projects)
+# Cargo.lock
+
 # Environment variables
 .env
+.env.*
+.env.local
 
 # IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
 # OS files
 .DS_Store
+.AppleDouble
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Compiled binaries
+*.exe
+*.pdb
+*.d
