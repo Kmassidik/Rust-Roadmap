@@ -19,7 +19,7 @@
     let a: HashSet<i32> = [1, 2, 3].iter().cloned().collect();
     let b: HashSet<i32> = [2, 3, 4].iter().cloned().collect();
     
-    let union: Vec<_> = a.union(&b).collect();
-    let intersection: Vec<_> = a.intersection(&b).collect();
-    let difference: Vec<_> = a.difference(&b).collect();
+    let union: Vec<_> = a.union(&b).collect();                // [1,2,3,4]
+    let intersection: Vec<_> = a.intersection(&b).collect();  // [2,3]
+    let difference: Vec<_> = a.difference(&b).collect();      // [1]
 ```
