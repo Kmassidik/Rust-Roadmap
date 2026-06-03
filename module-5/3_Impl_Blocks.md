@@ -1,3 +1,5 @@
+Add methods to structs and enums:
+
 ```rust
 struct Rectangle {
     width:  f64,
