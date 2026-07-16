@@ -15,3 +15,21 @@ println!("owners: {}", Rc::strong_count(&a)); // output → owners: 3
 drop(b);
 println!("owners: {}", Rc::strong_count(&a)); // output → owners: 2
 ```
+⚠️ ```Rc``` is NOT thread-safe — use ```Arc``` for multi-threading!
+
+#### Rc with RefCell for interior mutability:
+
+```rust
+use std::rc::Rc;
+use std::cell::RefCell;
+
+let shared = Rc::new(RefCell::new(vec![1, 2, 3]));
+let clone1  = Rc::clone(&shared);
+let clone2  = Rc::clone(&shared);
+
+clone1.borrow_mut().push(4);
+clone2.borrow_mut().push(5);
+
+println!("{:?}", shared.borrow());
+// output → [1, 2, 3, 4, 5]
+```
