@@ -27,3 +27,9 @@ Desktop.ini
 *.exe
 *.pdb
 *.d
+
+# Standalone binaries compiled directly with `rustc` (no Cargo/target dir),
+# e.g. early exercises before a module has its own Cargo project
+module-*/*
+!module-*/*.*
+!module-*/*/
